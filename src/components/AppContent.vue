@@ -22,8 +22,10 @@ export default {
       <div class="row">
         <div class="col-6">
           <h2 class="text-center">Film</h2>
-          <ContentCard v-for="movie in store.movieSearchResults" :item="movie" :searchType="'movie'" :key="movie.id">
-          </ContentCard>
+          <div class="row">
+            <ContentCard v-for="movie in store.movieSearchResults" :item="movie" :searchType="'movie'" :key="movie.id">
+            </ContentCard>
+          </div>
         </div>
 
         <div class="col-6">
