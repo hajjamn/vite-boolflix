@@ -46,7 +46,7 @@ export default {
 </script>
 
 <template>
-
+  <i class="fa-solid fa-star"></i>
   <AppHeader @search="searchContent()" />
   <AppContent />
 
@@ -54,5 +54,6 @@ export default {
 
 <style lang="scss">
 @use 'bootstrap';
-@use './assets/style/general.scss'
+@use './assets/style/general.scss';
+/* @use 'font-awesome'; */
 </style>

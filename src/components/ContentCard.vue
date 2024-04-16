@@ -30,7 +30,10 @@ export default {
         <span>Lingua:</span>
         <img :src="`/flags/4x3/${item.original_language.toLowerCase()}.svg`" alt="" class="rectangle-flag">
       </li>
-      <li class="list-group-item">Voto: {{ ratingStars }}</li>
+      <li class="list-group-item">
+        <span>Voto: </span>
+        <i class="fa-solid fa-star" v-for="n in ratingStars">Stellina</i>
+      </li>
     </ul>
   </div>
 
