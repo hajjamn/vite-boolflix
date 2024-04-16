@@ -1,8 +1,11 @@
 <script>
 
 export default {
+  components: {
+  },
   data() {
     return {
+      hover: false
     }
   },
   props: {
@@ -21,22 +24,30 @@ export default {
 <template>
 
   <div class="m-auto">
-    <div class="border w-auto">
+    <div class="border w-auto position-relative" @mouseover="hover = true" @mouseleave="hover = false">
       <img :src="`https://image.tmdb.org/t/p/w500/${item.poster_path}`" alt="" class="w-50">
+      <div class="my-overlay position-absolute top-0 start-0 w-100 h-100 bg-dark"
+        :class="hover === false ? 'd-none' : ''">
+        <ul class="list-group list-group-flush h-100 justify-content-start">
+          <li class="list-group-item bg-transparent text-white">Titolo: {{ searchType === 'movie' ? item.title :
+            item.name }}</li>
+          <li class="list-group-item bg-transparent text-white">Titolo originale: {{ searchType === 'movie' ?
+            item.original_title :
+            item.original_name
+            }}</li>
+          <li class="list-group-item bg-transparent text-white">
+            <span>Lingua:</span>
+            <img :src="`/flags/4x3/${item.original_language.toLowerCase()}.svg`" alt="" class="rectangle-flag">
+          </li>
+          <li class="list-group-item bg-transparent text-white">
+            <span>Voto: </span>
+            <i class="fa-solid fa-star color-gold" v-for="n in ratingStars">Stellina</i>
+          </li>
+          <li class="list-group-item bg-transparent text-white">Overview: {{ item.overview }}</li>
+        </ul>
+
+      </div>
     </div>
-    <ul class="list-group d-none">
-      <li class="list-group-item">Titolo: {{ searchType === 'movie' ? item.title : item.name }}</li>
-      <li class="list-group-item">Titolo originale: {{ searchType === 'movie' ? item.original_title : item.original_name
-        }}</li>
-      <li class="list-group-item">
-        <span>Lingua:</span>
-        <img :src="`/flags/4x3/${item.original_language.toLowerCase()}.svg`" alt="" class="rectangle-flag">
-      </li>
-      <li class="list-group-item">
-        <span>Voto: </span>
-        <i class="fa-solid fa-star" v-for="n in ratingStars">Stellina</i>
-      </li>
-    </ul>
   </div>
 
 </template>

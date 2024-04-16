@@ -16,7 +16,6 @@ export default {
   },
   methods: {
     searchContent() {
-      console.log(`Sto facendo la ricerca di ${store.currentSearch}`)
       axios
         .get('https://api.themoviedb.org/3/search/movie', {
           params: {
@@ -25,7 +24,6 @@ export default {
           }
         })
         .then((res) => {
-          console.log(res.data)
           store.movieSearchResults = res.data.results
         })
 
