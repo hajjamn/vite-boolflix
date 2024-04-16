@@ -3,7 +3,6 @@
 export default {
   data() {
     return {
-
     }
   }
 }
@@ -13,7 +12,7 @@ export default {
 <template>
 
   <div>
-    <button class="btn btn-danger">I am a Button</button>
+    <button class="btn btn-danger" @click="$emit('search')">I am a Button</button>
   </div>
 
 </template>

@@ -11,6 +11,11 @@ export default {
     return {
 
     }
+  },
+  methods: {
+    searchContent() {
+      console.log('Sto facendo la ricerca')
+    }
   }
 }
 
@@ -20,7 +25,7 @@ export default {
 
   <div class="bg-secondary">
     <SearchBar />
-    <Button />
+    <Button @search="searchContent()" />
   </div>
 
 </template>
