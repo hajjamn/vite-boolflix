@@ -8,6 +8,11 @@ export default {
   props: {
     item: Object,
     searchType: String,
+  },
+  computed: {
+    ratingStars() {
+      return Math.ceil(this.item.vote_average * 0.5)
+    }
   }
 }
 
@@ -25,7 +30,7 @@ export default {
         <span>Lingua:</span>
         <img :src="`/flags/4x3/${item.original_language.toLowerCase()}.svg`" alt="" class="rectangle-flag">
       </li>
-      <li class="list-group-item">Voto: {{ item.vote_average }}</li>
+      <li class="list-group-item">Voto: {{ ratingStars }}</li>
     </ul>
   </div>
 
