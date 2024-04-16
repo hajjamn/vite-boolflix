@@ -1,5 +1,6 @@
 <script>
 import axios from 'axios'
+import { store } from './store.js'
 
 export default {
   components: {
@@ -7,7 +8,7 @@ export default {
   },
   data() {
     return {
-      moviedbKey: '67894cbb91f10ee86602f7bd6b1f20c9',
+      store,
     }
   }
 }
@@ -16,7 +17,7 @@ export default {
 <template>
 
   <div class="text-center">
-    {{ moviedbKey }}
+    {{ store.moviedbKey }}
   </div>
 
 </template>
