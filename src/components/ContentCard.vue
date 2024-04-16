@@ -20,9 +20,11 @@ export default {
 
 <template>
 
-  <div>
-    <img :src="`https://image.tmdb.org/t/p/w500/${item.poster_path}`" alt="" class="w-50">
-    <ul class="list-group">
+  <div class="m-auto">
+    <div class="border w-auto">
+      <img :src="`https://image.tmdb.org/t/p/w500/${item.poster_path}`" alt="" class="w-50">
+    </div>
+    <ul class="list-group d-none">
       <li class="list-group-item">Titolo: {{ searchType === 'movie' ? item.title : item.name }}</li>
       <li class="list-group-item">Titolo originale: {{ searchType === 'movie' ? item.original_title : item.original_name
         }}</li>
