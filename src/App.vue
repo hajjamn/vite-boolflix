@@ -45,9 +45,10 @@ export default {
 </script>
 
 <template>
-  <i class="fa-solid fa-star"></i>
-  <AppHeader @search="searchContent()" />
-  <AppContent />
+  <div class="my-main-wrapper bg-secondary">
+    <AppHeader @search="searchContent()" />
+    <AppContent />
+  </div>
 
 </template>
 
