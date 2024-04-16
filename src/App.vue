@@ -24,6 +24,7 @@ export default {
           }
         })
         .then((res) => {
+          console.log(res.data)
           store.movieSearchResults = res.data.results
         })
 
