@@ -1,6 +1,7 @@
 <script>
 import SearchBar from './SearchBar.vue'
 import Button from './Button.vue'
+import { store } from '../store.js'
 
 export default {
   components: {
@@ -14,7 +15,7 @@ export default {
   },
   methods: {
     searchContent() {
-      console.log('Sto facendo la ricerca')
+      console.log(`Sto facendo la ricerca di ${store.currentSearch}`)
     }
   }
 }
