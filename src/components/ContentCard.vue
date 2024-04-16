@@ -16,6 +16,7 @@ export default {
 <template>
 
   <div>
+    <img :src="`https://image.tmdb.org/t/p/w500/${item.poster_path}`" alt="" class="w-50">
     <ul class="list-group">
       <li class="list-group-item">Titolo: {{ searchType === 'movie' ? item.title : item.name }}</li>
       <li class="list-group-item">Titolo originale: {{ searchType === 'movie' ? item.original_title : item.original_name
