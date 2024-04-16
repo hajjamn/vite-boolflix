@@ -20,9 +20,19 @@ export default {
   <div class="bg-primary">
     <p>I am the content</p>
   </div>
+  <div class="row">
+    <div class="w-50">
+      <h2>Film</h2>
+      <ContentCard v-for="movie in store.movieSearchResults" :item="movie" :searchType="'movie'" :key="movie.id">
+      </ContentCard>
+    </div>
 
-  <h1>Films</h1>
-  <ContentCard v-for="movie in store.movieSearchResults" :item="movie" :key="movie.id"></ContentCard>
+    <div class="w-50">
+      <h2>TV</h2>
+      <ContentCard v-for="tv in store.tvSearchResults" :item="tv" :searchType="'tv'" :key="tv.id"></ContentCard>
+    </div>
+  </div>
+
 
 </template>
 

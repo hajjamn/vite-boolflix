@@ -28,6 +28,18 @@ export default {
           console.log(res.data)
           store.movieSearchResults = res.data.results
         })
+
+      axios
+        .get('https://api.themoviedb.org/3/search/tv', {
+          params: {
+            api_key: store.queryKey,
+            query: store.currentSearch,
+          }
+        })
+        .then((res) => {
+          console.log(res.data)
+          store.tvSearchResults = res.data.results
+        })
     }
   }
 }

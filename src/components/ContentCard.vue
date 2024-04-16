@@ -7,6 +7,7 @@ export default {
   },
   props: {
     item: Object,
+    searchType: String,
   }
 }
 
@@ -16,8 +17,9 @@ export default {
 
   <div>
     <ul class="list-group">
-      <li class="list-group-item">Titolo: {{ item.title }}</li>
-      <li class="list-group-item">Titolo originale: {{ item.original_title }}</li>
+      <li class="list-group-item">Titolo: {{ searchType === 'movie' ? item.title : item.name }}</li>
+      <li class="list-group-item">Titolo originale: {{ searchType === 'movie' ? item.origina_title : item.original_name
+        }}</li>
       <li class="list-group-item">Lingua: {{ item.original_language }}</li>
       <li class="list-group-item">Voto: {{ item.vote_average }}</li>
     </ul>
