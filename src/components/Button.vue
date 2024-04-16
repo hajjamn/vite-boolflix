@@ -12,7 +12,7 @@ export default {
 <template>
 
   <div>
-    <button class="btn btn-danger" @click="$emit('search')">I am a Button</button>
+    <button class="btn btn-danger" @click="$emit('search')">Cerca</button>
   </div>
 
 </template>

@@ -13,13 +13,10 @@ export default {
 
 <template>
 
-  <div>
-    <div class="mb-3">
-      <label for="header-searchbar" class="form-label">I am a SearchBar
-        Label</label>
-      <input type="text" class="form-control" id="header-searchbar" placeholder="I am a searchbar"
-        v-model="store.currentSearch" @keyup.enter="$emit('search')"></input>
-    </div>
+  <div class="me-3 flex-grow-1">
+    <input type="text" class="form-control" id="header-searchbar"
+      placeholder="Cerca il titolo del tuo film o della tua serie..." v-model="store.currentSearch"
+      @keyup.enter="$emit('search')"></input>
   </div>
 
 </template>
