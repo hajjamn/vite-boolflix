@@ -15,10 +15,10 @@ export default {
 
   <div>
     <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label">I am a SearchBar
+      <label for="header-searchbar" class="form-label">I am a SearchBar
         Label</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="I am a searchbar"
-        v-model="store.currentSearch"></textarea>
+      <input type="text" class="form-control" id="header-searchbar" placeholder="I am a searchbar"
+        v-model="store.currentSearch" @keyup.enter="$emit('search')"></input>
     </div>
   </div>
 

@@ -20,7 +20,7 @@ export default {
 <template>
 
   <div class="bg-secondary">
-    <SearchBar />
+    <SearchBar @search="$emit('search')" />
     <Button @search="$emit('search')" />
   </div>
 
