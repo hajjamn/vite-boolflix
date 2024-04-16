@@ -1,7 +1,6 @@
 <script>
 import SearchBar from './SearchBar.vue'
 import Button from './Button.vue'
-import { store } from '../store.js'
 
 export default {
   components: {
@@ -10,13 +9,9 @@ export default {
   },
   data() {
     return {
-
     }
   },
   methods: {
-    searchContent() {
-      console.log(`Sto facendo la ricerca di ${store.currentSearch}`)
-    }
   }
 }
 
@@ -26,7 +21,7 @@ export default {
 
   <div class="bg-secondary">
     <SearchBar />
-    <Button @search="searchContent()" />
+    <Button @search="$emit('search')" />
   </div>
 
 </template>

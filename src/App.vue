@@ -13,16 +13,29 @@ export default {
     return {
       store,
     }
+  },
+  methods: {
+    searchContent() {
+      console.log(`Sto facendo la ricerca di ${store.currentSearch}`)
+      axios
+        .get('https://api.themoviedb.org/3/search/movie', {
+          params: {
+            api_key: store.queryKey,
+            query: store.currentSearch,
+          }
+        })
+        .then((res) => {
+          console.log(res.data)
+          store.searchResults = res.data.results
+        })
+    }
   }
 }
 </script>
 
 <template>
 
-  <div class="text-center">
-    {{ store.moviedbKey }}
-  </div>
-  <AppHeader />
+  <AppHeader @search="searchContent()" />
   <AppContent />
 
 </template>
