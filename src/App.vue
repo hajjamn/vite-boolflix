@@ -26,7 +26,7 @@ export default {
         })
         .then((res) => {
           console.log(res.data)
-          store.searchResults = res.data.results
+          store.movieSearchResults = res.data.results
         })
     }
   }
