@@ -17,9 +17,6 @@ export default {
 
 <template>
 
-  <div class="bg-primary">
-    <p>I am the content</p>
-  </div>
   <div class="row">
     <div class="w-50">
       <h2>Film</h2>
